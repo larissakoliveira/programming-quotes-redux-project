@@ -21,14 +21,14 @@ export const Quote = () => {
 
   return (
     <div className='m-10 flex flex-col items-center'>
-      <h1 className='text-amber-50 text-2xl min-h-100'>
+      <h1 className='text-amber-50 text-2xl min-h-max'>
        {
          loading ? 
          <Loading/> : 
          quote?.en
         }
       </h1>
-      <button className='font-black mt-5 text-2xl hover:bg-sky-200 hover:text-blue-900 bg-blue-900 text-blue-50 rounded p-2' onClick={getNewQuote}>New Quote</button>
+      <button className='font-black mt-48 text-2xl hover:bg-sky-200 hover:text-blue-900 bg-blue-900 text-blue-50 rounded p-2' onClick={getNewQuote}>New Quote</button>
     </div>
   )
 }
