@@ -3,7 +3,7 @@ import reducers from "./quote-reducer"
 
 const initialState = {
     data: {
-        list: [],
+        quote: [],
     },
     settings: {
         loading: false,
@@ -11,8 +11,8 @@ const initialState = {
     error: '',
 };
 
-const quotesSlice = createSlice({
-    name: 'quotes',
+const quoteSlice = createSlice({
+    name: 'quote',
     reducers,
     initialState,
 });
@@ -20,11 +20,11 @@ const quotesSlice = createSlice({
 const {
     actions: quoteActions,
     reducer: quoteReducer,
-} = quotesSlice
+} = quoteSlice
 
 export {
     quoteActions,
     quoteReducer,
   };
 
-  export default quotesSlice;
+  export default quoteSlice;

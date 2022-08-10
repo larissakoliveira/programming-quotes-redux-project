@@ -1,22 +1,22 @@
 import { call, put, takeLatest } from "redux-saga/effects";
-import quotesService from "../../services/quotes";
-import { quoteActions } from "./quote-slice";
+import quoteService from "../../services/quotes";
+import quoteSlice, { quoteActions } from "./quote-slice";
 
-function* getQuotes() {
+function* getQuote() {
     yield put(quoteActions.setSettings({ loading: true }));
     try {
-        const fetchedData = yield call(
-            quotesService().getQuoteList
-        )
-        yield put(quoteActions.setQuotesList(fetchedData));
+        const fetchedData = yield call(quoteService().getQuote)
+        yield put(quoteSlice.actions.setData({quote: fetchedData.data}));
         yield put(quoteActions.setError(''));
-    } catch (error) {
-        yield put(quoteActions.setError(error.message));
+    } catch (exception) {
+        yield put(quoteActions.setError(exception.message));
+    } finally{
+        yield put(quoteActions.setSettings({ loading: false }));
     }
-    yield put(quoteActions.setSettings({ loading: false }));
 };
 
-export default function* quoteSaga() {
-    yield takeLatest('quote/getListQuotes', getQuotes);
-};
+const quoteSaga = [
+    takeLatest('quote/getQuote', getQuote)
+]
 
+export default quoteSaga

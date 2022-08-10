@@ -1,15 +1,17 @@
 import axiosInstance from "../module/axios/axios";
 
-const quotesService = () => {
+const quoteService = () => {
 
-const getQuoteList = () => axiosInstance.get('/quotes').then(response => {
-     console.log(response.data[22].en)
-  }
-  ).catch(err => console.log(err))
+const getQuote = () => 
+    axiosInstance.get('/quotes/random')
+    .then(response => {
+        return response
+    }
+    ).catch(err => console.log(err))
 
     return {
-        getQuoteList
+        getQuote
     }
 }
 
-export default quotesService;
+export default quoteService;

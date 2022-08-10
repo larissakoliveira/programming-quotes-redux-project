@@ -1,14 +1,14 @@
 import { all } from 'redux-saga/effects';
+import quoteSaga from '../quotes/quote-saga';
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from '@redux-saga/core';
-import quotesSlice from '../quotes/quote-slice';
-import quoteSaga from '../quotes/quote-saga';
+import { quoteReducer } from '../quotes/quote-slice';
 
 const saga = createSagaMiddleware()
 
 const store = configureStore({
   reducer: {
-  quotes: quotesSlice.reducer,
+  quote: quoteReducer,
   },
   middleware: [saga]
 });

@@ -1,3 +1,3 @@
-export const quotesListSelector = (state) => state.quotes.data.list;
+export const quoteSelector = (state) => state.quote.data;
 
-export const loadingSelector = (state) => state.quotes.settings.loading;
+export const loadingSelector = (state) => state.quote.settings.loading;

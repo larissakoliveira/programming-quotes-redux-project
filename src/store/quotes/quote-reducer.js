@@ -1,6 +1,6 @@
-const getListQuotes = (_state, _action) => {};
+const getQuote = (_state, _action) => {};
 
-const setQuotesList = (state, action) => {
+const setData = (state, action) => {
     state.data.list = action.payload;
 };
 
@@ -13,9 +13,9 @@ const setError = (state, action) => {
 };
 
 const reducers = {
-    getListQuotes,
+    getQuote,
     setSettings,
-    setQuotesList,
+    setData,
     setError
 };
   
