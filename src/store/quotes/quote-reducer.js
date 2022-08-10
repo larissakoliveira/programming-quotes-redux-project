@@ -1,7 +1,7 @@
 const getQuote = (_state, _action) => {};
 
 const setData = (state, action) => {
-    state.data.list = action.payload;
+    state.data = action.payload;
 };
 
 const setSettings = (state, action) => {
