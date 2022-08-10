@@ -21,7 +21,7 @@ export const Quote = () => {
 
   return (
     <div className='m-10 flex flex-col items-center'>
-      <h1 className='text-amber-50 text-2xl min-h-100 min-w-100'>
+      <h1 className='text-amber-50 text-2xl min-h-100'>
        {
          loading ? 
          <Loading/> : 
